@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dmytro Dmytrush — DevOps / Platform Engineer</title>
+<meta name="description" content="DevOps / Platform Engineer. AWS EKS, Terraform, Kubernetes, GitOps, Prometheus/Grafana. CKA, CKAD, AWS SAA certified.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand">dmytro<span class="dot">.</span>dmytrush</span>
+    <div class="links">
+      <a href="#skills"><span>~/</span>skills</a>
+      <a href="#experience"><span>~/</span>experience</a>
+      <a href="#projects"><span>~/</span>projects</a>
+      <a href="#contact"><span>~/</span>contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">$ whoami</div>
+    <h1>Dmytro Dmytrush</h1>
+    <p class="role">DevOps / Platform Engineer — <b>AWS · Kubernetes · Terraform</b></p>
+    <p class="lead">
+      I build and operate cloud platforms that stay up when traffic spikes and stay
+      reproducible when everything is code. Five-plus years across high-traffic
+      consumer and supply-chain systems — turning manual infrastructure into
+      GitOps-driven, observable, self-service platforms.
+    </p>
+    <div class="badges">
+      <span class="badge">CKA</span>
+      <span class="badge">CKAD</span>
+      <span class="badge">AWS Solutions Architect – Associate</span>
+      <span class="badge">Terraform Associate</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View project deep-dives →</a>
+      <a class="btn" href="https://github.com/Drdmytrush90" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/dmytro-dmytrush-b77587130" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">stack</div>
+    <h2 class="sec-title">What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-card fade-up">
+        <h3>Cloud &amp; Infra</h3>
+        <div class="tags">
+          <span class="tag">AWS EKS</span><span class="tag">IAM / IRSA</span>
+          <span class="tag">CloudWatch</span><span class="tag">Secrets Manager</span>
+          <span class="tag">S3</span><span class="tag">RDS</span><span class="tag">ALB</span>
+          <span class="tag">Kubernetes</span><span class="tag">Docker</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <h3>IaC &amp; Delivery</h3>
+        <div class="tags">
+          <span class="tag">Terraform</span><span class="tag">Helm</span>
+          <span class="tag">Argo CD</span><span class="tag">GitOps</span>
+          <span class="tag">GitHub Actions</span><span class="tag">Gateway API</span>
+          <span class="tag">AWS LB Controller</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <h3>Observability</h3>
+        <div class="tags">
+          <span class="tag">Prometheus</span><span class="tag">Grafana</span>
+          <span class="tag">Alertmanager</span><span class="tag">SLOs</span>
+          <span class="tag">Error-budget alerting</span><span class="tag">CloudWatch</span>
+        </div>
+      </div>
+      <div class="skill-card fade-up">
+        <h3>AI &amp; Automation</h3>
+        <div class="tags">
+          <span class="tag">Claude Code</span><span class="tag">Custom skills</span>
+          <span class="tag">MCP</span><span class="tag">Context engineering</span>
+          <span class="tag">Bash</span><span class="tag">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label">experience</div>
+    <h2 class="sec-title">Where I've done it</h2>
+    <div class="timeline">
+      <div class="tl-item fade-up">
+        <div class="tl-head">
+          <span class="tl-title">Platform Engineer</span>
+          <span class="tl-co">@ project44</span>
+          <span class="tl-date">Sep 2023 – Present</span>
+        </div>
+        <div class="tl-loc">Chicago, IL</div>
+        <ul>
+          <li>Support infrastructure for 50+ containerized applications across 5 EKS clusters and multiple AWS accounts.</li>
+          <li>Built reusable platform tooling — Terraform modules, Helm charts, Argo CD ApplicationSets, GitHub Actions templates — for standardized self-service deploys.</li>
+          <li>Hold 99.95% service availability via proactive monitoring, SLO dashboards, and alert tuning on Prometheus + Grafana.</li>
+          <li>Integrated AI-assisted operational workflows that cut incident investigation time ~30%.</li>
+        </ul>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-head">
+          <span class="tl-title">DevOps Engineer</span>
+          <span class="tl-co">@ SeatGeek</span>
+          <span class="tl-date">Jul 2021 – Sep 2023</span>
+        </div>
+        <div class="tl-loc">New York, NY (Remote)</div>
+        <ul>
+          <li>Operated a high-traffic ticket marketplace on AWS EKS — Terraform-managed cluster with on-demand + Spot node mix.</li>
+          <li>Migrated cluster infrastructure from CloudFormation to Terraform with zero downtime.</li>
+          <li>Engineered custom-metric autoscaling that held p99 &lt; 400ms through 14× on-sale traffic bursts.</li>
+          <li>Cut on-call pages ~70% by moving from raw-error alerts to SLO burn-rate alerting.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">deep-dives</div>
+    <h2 class="sec-title">Selected work, in detail</h2>
+    <div class="proj-grid">
+      <div class="proj-card fade-up">
+        <div class="p-tag">HIGH-TRAFFIC · RELIABILITY</div>
+        <h3>Ticket Marketplace Platform</h3>
+        <p>Absorbing 14× on-sale traffic bursts on EKS: custom-metric autoscaling, a zero-downtime CloudFormation→Terraform migration, and SLO burn-rate alerting that cut pager noise 70%.</p>
+        <div class="p-stack"><span>EKS</span><span>Terraform</span><span>Helm</span><span>Prometheus</span><span>Argo CD</span></div>
+        <a class="p-link" href="seatgeek.html">Read the deep-dive →</a>
+      </div>
+      <div class="proj-card fade-up">
+        <div class="p-tag">PLATFORM · DEVELOPER EXPERIENCE</div>
+        <h3>Self-Service Platform @ project44</h3>
+        <p>Golden-path tooling across 50+ apps and 5 clusters — Terraform modules, Helm charts, Argo CD ApplicationSets — plus AI-assisted ops that cut incident investigation ~30%.</p>
+        <div class="p-stack"><span>EKS</span><span>Argo CD</span><span>Terraform</span><span>Grafana</span><span>Claude Code</span></div>
+        <a class="p-link" href="project44.html">Read the deep-dive →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">by the numbers</div>
+    <h2 class="sec-title">Impact, quantified</h2>
+    <div class="metrics">
+      <div class="metric fade-up"><div class="num">99.95%</div><div class="lbl">service availability</div></div>
+      <div class="metric fade-up"><div class="num">14×</div><div class="lbl">peak traffic absorbed</div></div>
+      <div class="metric fade-up"><div class="num">~70%</div><div class="lbl">fewer on-call pages</div></div>
+      <div class="metric fade-up"><div class="num">50+</div><div class="lbl">apps supported</div></div>
+      <div class="metric fade-up"><div class="num">~35%</div><div class="lbl">compute cost cut</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-label" style="text-align:center;">get in touch</div>
+    <h2 class="sec-title" style="text-align:center;">Let's talk infrastructure</h2>
+    <div class="f-links">
+      <a href="mailto:ddmytrush@gmail.com">ddmytrush@gmail.com</a>
+      <a href="https://github.com/Drdmytrush90" target="_blank" rel="noopener">github.com/Drdmytrush90</a>
+      <a href="https://www.linkedin.com/in/dmytro-dmytrush-b77587130" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="f-note">Chicago, IL · built by hand, deployed on GitHub Pages</p>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = (i % 5 * 60) + 'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
