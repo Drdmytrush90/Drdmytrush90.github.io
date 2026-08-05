@@ -5,36 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zero-Downtime CloudFormation → Terraform Migration — Dmytro Dmytrush</title>
 <meta name="description" content="High-traffic ticket marketplace on AWS EKS: custom-metric autoscaling, zero-downtime CloudFormation to Terraform migration, SLO burn-rate alerting.">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <span class="brand">dmytro<span class="dot">.</span>dmytrush</span>
-    <div class="links">
-      <a href="index.html"><span>~/</span>home</a>
-      <a href="index.html#projects"><span>~/</span>projects</a>
-      <a href="index.html#contact"><span>~/</span>contact</a>
-    </div>
+<div class="ambient" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="blob b4"></div><div class="blob b5"></div>
+</div>
+<div class="dots" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><span class="brand-dot">DD</span> Dmytro Dmytrush</a>
+    <nav class="nav-links">
+      <a href="index.html#skills" class="hide-sm">Skills</a>
+      <a href="index.html#experience" class="hide-sm">Experience</a>
+      <a href="index.html#projects" class="hide-sm">Work</a>
+      <a href="index.html#about" class="hide-sm">About</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:9px 18px;font-size:14px">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <header class="page-hero">
-  <div class="wrap">
-    <a class="back" href="index.html#projects">← back to projects</a>
-    <h1>Zero-Downtime CloudFormation → Terraform Migration</h1>
+  <div class="wrap reveal">
+    <a class="back" href="index.html#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to projects
+    </a>
+    <div class="eyebrow">SeatGeek · Infrastructure migration</div>
+    <h1>Zero-Downtime CloudFormation <span class="grad">&rarr; Terraform</span> Migration</h1>
     <p class="sub">A high-traffic secondary ticketing platform on AWS EKS — engineered to absorb the traffic spike of a major on-sale event without dropping orders, and to be fully reproducible as code.</p>
-    <div class="stack">
-      <span>AWS EKS</span><span>Terraform</span><span>Helm</span>
-      <span>Prometheus</span><span>Grafana</span><span>Argo CD</span><span>Spot + On-Demand</span>
+    <div class="stack tags">
+      <span class="tag">AWS EKS</span><span class="tag">Terraform</span><span class="tag">Helm</span>
+      <span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Argo CD</span><span class="tag">Spot + On-Demand</span>
     </div>
   </div>
 </header>
 
 <!-- The problem -->
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>The reliability profile of a ticket marketplace</h2>
     <p>
       99% of the traffic is ordinary browsing. The other 1% is a panic: a major artist announces a tour,
@@ -51,54 +63,54 @@
 
 <!-- Architecture -->
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>Architecture</h2>
     <p>Traffic enters through an AWS Load Balancer Controller–backed Gateway, hitting four EKS-hosted services. Terraform manages everything below the application; Prometheus watches everything above it.</p>
     <div class="diagram">
       <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, monospace">
         <defs>
           <marker id="arw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#6e7b8a"/>
+            <path d="M0,0 L6,3 L0,6 Z" fill="#837a71"/>
           </marker>
         </defs>
         <!-- Users -->
-        <rect x="290" y="12" width="140" height="40" rx="8" fill="#12171f" stroke="#30363d"/>
-        <text x="360" y="37" fill="#e6edf3" font-size="13" text-anchor="middle">On-sale traffic ⚡</text>
-        <line x1="360" y1="52" x2="360" y2="78" stroke="#6e7b8a" stroke-width="1.5" marker-end="url(#arw)"/>
+        <rect x="290" y="12" width="140" height="40" rx="8" fill="#edeae5" stroke="#d8d2ca"/>
+        <text x="360" y="37" fill="#1f1c19" font-size="13" text-anchor="middle">On-sale traffic ⚡</text>
+        <line x1="360" y1="52" x2="360" y2="78" stroke="#837a71" stroke-width="1.5" marker-end="url(#arw)"/>
         <!-- Gateway -->
-        <rect x="270" y="80" width="180" height="40" rx="8" fill="#12171f" stroke="#58a6ff"/>
-        <text x="360" y="105" fill="#58a6ff" font-size="12.5" text-anchor="middle">Gateway API · ALB</text>
+        <rect x="270" y="80" width="180" height="40" rx="8" fill="#edeae5" stroke="#5d5a92"/>
+        <text x="360" y="105" fill="#3a3860" font-size="12.5" text-anchor="middle">Gateway API · ALB</text>
         <!-- Services row -->
         <g>
-          <rect x="40"  y="160" width="150" height="52" rx="8" fill="#12171f" stroke="#4dd0a7"/>
-          <text x="115" y="182" fill="#e6edf3" font-size="12.5" text-anchor="middle">Inventory</text>
-          <text x="115" y="199" fill="#6e7b8a" font-size="10.5" text-anchor="middle">Spot · HPA(RPS)</text>
+          <rect x="40"  y="160" width="150" height="52" rx="8" fill="#edeae5" stroke="#2f6b64"/>
+          <text x="115" y="182" fill="#1f1c19" font-size="12.5" text-anchor="middle">Inventory</text>
+          <text x="115" y="199" fill="#837a71" font-size="10.5" text-anchor="middle">Spot · HPA(RPS)</text>
 
-          <rect x="205" y="160" width="150" height="52" rx="8" fill="#12171f" stroke="#f0a868"/>
-          <text x="280" y="182" fill="#e6edf3" font-size="12.5" text-anchor="middle">Order Processing</text>
-          <text x="280" y="199" fill="#6e7b8a" font-size="10.5" text-anchor="middle">On-Demand</text>
+          <rect x="205" y="160" width="150" height="52" rx="8" fill="#edeae5" stroke="#b09a6b"/>
+          <text x="280" y="182" fill="#1f1c19" font-size="12.5" text-anchor="middle">Order Processing</text>
+          <text x="280" y="199" fill="#837a71" font-size="10.5" text-anchor="middle">On-Demand</text>
 
-          <rect x="370" y="160" width="150" height="52" rx="8" fill="#12171f" stroke="#30363d"/>
-          <text x="445" y="182" fill="#e6edf3" font-size="12.5" text-anchor="middle">Pricing</text>
-          <text x="445" y="199" fill="#6e7b8a" font-size="10.5" text-anchor="middle">EKS</text>
+          <rect x="370" y="160" width="150" height="52" rx="8" fill="#edeae5" stroke="#d8d2ca"/>
+          <text x="445" y="182" fill="#1f1c19" font-size="12.5" text-anchor="middle">Pricing</text>
+          <text x="445" y="199" fill="#837a71" font-size="10.5" text-anchor="middle">EKS</text>
 
-          <rect x="535" y="160" width="150" height="52" rx="8" fill="#12171f" stroke="#30363d"/>
-          <text x="610" y="182" fill="#e6edf3" font-size="12.5" text-anchor="middle">Event Catalog</text>
-          <text x="610" y="199" fill="#6e7b8a" font-size="10.5" text-anchor="middle">EKS</text>
+          <rect x="535" y="160" width="150" height="52" rx="8" fill="#edeae5" stroke="#d8d2ca"/>
+          <text x="610" y="182" fill="#1f1c19" font-size="12.5" text-anchor="middle">Event Catalog</text>
+          <text x="610" y="199" fill="#837a71" font-size="10.5" text-anchor="middle">EKS</text>
         </g>
         <!-- gateway to services -->
-        <line x1="360" y1="120" x2="115" y2="158" stroke="#6e7b8a" stroke-width="1.2" marker-end="url(#arw)"/>
-        <line x1="360" y1="120" x2="280" y2="158" stroke="#6e7b8a" stroke-width="1.2" marker-end="url(#arw)"/>
-        <line x1="360" y1="120" x2="445" y2="158" stroke="#6e7b8a" stroke-width="1.2" marker-end="url(#arw)"/>
-        <line x1="360" y1="120" x2="610" y2="158" stroke="#6e7b8a" stroke-width="1.2" marker-end="url(#arw)"/>
+        <line x1="360" y1="120" x2="115" y2="158" stroke="#837a71" stroke-width="1.2" marker-end="url(#arw)"/>
+        <line x1="360" y1="120" x2="280" y2="158" stroke="#837a71" stroke-width="1.2" marker-end="url(#arw)"/>
+        <line x1="360" y1="120" x2="445" y2="158" stroke="#837a71" stroke-width="1.2" marker-end="url(#arw)"/>
+        <line x1="360" y1="120" x2="610" y2="158" stroke="#837a71" stroke-width="1.2" marker-end="url(#arw)"/>
         <!-- Prometheus -->
-        <rect x="205" y="255" width="310" height="40" rx="8" fill="#12171f" stroke="#4dd0a7"/>
-        <text x="360" y="280" fill="#4dd0a7" font-size="12.5" text-anchor="middle">Prometheus → Grafana SLO dashboards · Alertmanager</text>
-        <line x1="280" y1="212" x2="330" y2="253" stroke="#6e7b8a" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arw)"/>
-        <line x1="445" y1="212" x2="390" y2="253" stroke="#6e7b8a" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arw)"/>
+        <rect x="205" y="255" width="310" height="40" rx="8" fill="#edeae5" stroke="#2f6b64"/>
+        <text x="360" y="280" fill="#1f4f49" font-size="12.5" text-anchor="middle">Prometheus → Grafana SLO dashboards · Alertmanager</text>
+        <line x1="280" y1="212" x2="330" y2="253" stroke="#837a71" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arw)"/>
+        <line x1="445" y1="212" x2="390" y2="253" stroke="#837a71" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arw)"/>
         <!-- Terraform layer -->
-        <rect x="60" y="335" width="600" height="44" rx="8" fill="#0d1117" stroke="#30363d" stroke-dasharray="5 4"/>
-        <text x="360" y="362" fill="#9aa7b4" font-size="12.5" text-anchor="middle">Terraform — VPC · subnets · IAM/IRSA · EKS cluster · node groups · RDS · ElastiCache</text>
+        <rect x="60" y="335" width="600" height="44" rx="8" fill="#fbfaf8" stroke="#d8d2ca" stroke-dasharray="5 4"/>
+        <text x="360" y="362" fill="#837a71" font-size="12.5" text-anchor="middle">Terraform — VPC · subnets · IAM/IRSA · EKS cluster · node groups · RDS · ElastiCache</text>
       </svg>
     </div>
     <p style="color:var(--fg-mute); font-size:14px;">Solid arrows = request path. Dashed = metrics scrape. Dashed box = everything provisioned as code.</p>
@@ -107,7 +119,7 @@
 
 <!-- Story 1 -->
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>Engineering for the spike</h2>
     <p>
       Load tests showed the inventory service falling over at 8× normal RPS. A CPU-based autoscaler
@@ -129,7 +141,7 @@
 
 <!-- Story 2 -->
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>Zero-downtime CloudFormation → Terraform migration</h2>
     <p>
       The cluster and all supporting infrastructure lived in CloudFormation stacks that had accumulated a year of
@@ -156,7 +168,7 @@
 
 <!-- Story 3 -->
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>Alerting that pages on real problems</h2>
     <p>
       The old alerts fired on raw error rate — one error at 2am read as "100% error rate" and paged; meanwhile slow
@@ -176,29 +188,64 @@
 </section>
 
 <!-- Metrics -->
-<section>
+<section class="metrics">
   <div class="wrap">
-    <div class="sec-label">outcomes</div>
-    <h2 class="sec-title">Where it landed</h2>
-    <div class="metrics">
-      <div class="metric"><div class="num">14×</div><div class="lbl">burst traffic held</div></div>
-      <div class="metric"><div class="num">&lt;400ms</div><div class="lbl">p99 at peak</div></div>
-      <div class="metric"><div class="num">0</div><div class="lbl">downtime on migration</div></div>
-      <div class="metric"><div class="num">~70%</div><div class="lbl">fewer pages</div></div>
-      <div class="metric"><div class="num">~35%</div><div class="lbl">compute cost cut</div></div>
+    <div class="sec-head reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">Outcomes</div>
+      <h2 class="h2">Where it landed</h2>
+    </div>
+    <div class="metric-grid reveal">
+      <div class="metric"><div class="n">14&times;</div><div class="l">burst traffic held</div></div>
+      <div class="metric"><div class="n">&lt;400ms</div><div class="l">response time at peak</div></div>
+      <div class="metric"><div class="n">0</div><div class="l">downtime on migration</div></div>
+      <div class="metric"><div class="n">3&rarr;22</div><div class="l">pods in under 2 min</div></div>
+      <div class="metric"><div class="n">&minus;35%</div><div class="l">compute cost cut</div></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="f-links">
-      <a href="index.html">← home</a>
-      <a href="project44.html">project44 deep-dive →</a>
-    </div>
-    <p class="f-note">Dmytro Dmytrush · DevOps / Platform Engineer</p>
+  <div class="wrap foot">
+    <span class="foot-links">
+      <a href="project44.html">← Internal developer platform deep-dive</a>
+      <a href="index.html">Home →</a>
+    </span>
+    <span class="foot-links">
+      <a href="mailto:contact@dmytro-dmytrush.com">Email</a>
+      <a href="tel:+13129092695">312-909-2695</a>
+      <a href="https://github.com/Drdmytrush90" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/dmytro-dmytrush-b77587130" rel="noopener">LinkedIn</a>
+    </span>
   </div>
 </footer>
+
+<a href="#" class="top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    items.forEach(function(el){ io.observe(el); });
+  }
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(nav) nav.classList.toggle('stuck', y > 8);
+    if(toTop) toTop.classList.toggle('show', y > 600);
+  }, {passive:true});
+})();
+</script>
 
 </body>
 </html>

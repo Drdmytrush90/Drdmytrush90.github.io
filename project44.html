@@ -5,35 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Internal Developer Platform @ project44 — Dmytro Dmytrush</title>
 <meta name="description" content="Golden-path platform tooling across 50+ apps and 12 EKS clusters: Terraform modules, Helm charts, Argo CD ApplicationSets, and AI-assisted operations.">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="wrap">
-    <span class="brand">dmytro<span class="dot">.</span>dmytrush</span>
-    <div class="links">
-      <a href="index.html"><span>~/</span>home</a>
-      <a href="index.html#projects"><span>~/</span>projects</a>
-      <a href="index.html#contact"><span>~/</span>contact</a>
-    </div>
+<div class="ambient" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="blob b4"></div><div class="blob b5"></div>
+</div>
+<div class="dots" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand"><span class="brand-dot">DD</span> Dmytro Dmytrush</a>
+    <nav class="nav-links">
+      <a href="index.html#skills" class="hide-sm">Skills</a>
+      <a href="index.html#experience" class="hide-sm">Experience</a>
+      <a href="index.html#projects" class="hide-sm">Work</a>
+      <a href="index.html#about" class="hide-sm">About</a>
+      <a href="index.html#contact" class="btn btn-primary" style="padding:9px 18px;font-size:14px">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <header class="page-hero">
-  <div class="wrap">
-    <a class="back" href="index.html#projects">← back to projects</a>
-    <h1>Internal Developer Platform @ project44</h1>
+  <div class="wrap reveal">
+    <a class="back" href="index.html#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to projects
+    </a>
+    <div class="eyebrow">project44 · Platform engineering</div>
+    <h1>Internal Developer Platform <span class="grad">@ project44</span></h1>
     <p class="sub">Golden-path tooling that lets product teams provision infrastructure and ship services without touching raw infra — across 50+ applications and 12 EKS clusters.</p>
-    <div class="stack">
-      <span>AWS EKS</span><span>Argo CD</span><span>Terraform</span>
-      <span>Helm</span><span>GitHub Actions</span><span>Prometheus</span><span>Grafana</span><span>Claude Code</span>
+    <div class="stack tags">
+      <span class="tag">AWS EKS</span><span class="tag">Argo CD</span><span class="tag">Terraform</span>
+      <span class="tag">Helm</span><span class="tag">GitHub Actions</span><span class="tag">Prometheus</span>
+      <span class="tag">Grafana</span><span class="tag">Claude Code</span>
     </div>
   </div>
 </header>
 
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>The problem: infrastructure as a bottleneck</h2>
     <p>
       When every team needs the platform team to hand-provision infrastructure and wire up deploys, the platform team
@@ -44,104 +57,153 @@
 </section>
 
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
     <h2>The golden path</h2>
     <p>I built the reusable layer that sits between raw AWS/Kubernetes and the product teams:</p>
     <div class="diagram">
       <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, monospace">
         <defs>
           <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#6e7b8a"/>
+            <path d="M0,0 L6,3 L0,6 Z" fill="#837a71"/>
           </marker>
         </defs>
-        <!-- Teams -->
-        <rect x="250" y="14" width="220" height="40" rx="8" fill="#12171f" stroke="#58a6ff"/>
-        <text x="360" y="39" fill="#58a6ff" font-size="12.5" text-anchor="middle">Product teams — a PR, not a ticket</text>
-        <line x1="360" y1="54" x2="360" y2="78" stroke="#6e7b8a" stroke-width="1.5" marker-end="url(#a2)"/>
-        <!-- Golden path modules -->
-        <rect x="60" y="80" width="600" height="66" rx="10" fill="#0d1117" stroke="#4dd0a7"/>
-        <text x="360" y="102" fill="#4dd0a7" font-size="12.5" text-anchor="middle">Golden-path building blocks</text>
-        <g font-size="11" fill="#e6edf3" text-anchor="middle">
-          <rect x="80"  y="112" width="130" height="26" rx="6" fill="#12171f" stroke="#30363d"/><text x="145" y="129">Terraform modules</text>
-          <rect x="225" y="112" width="110" height="26" rx="6" fill="#12171f" stroke="#30363d"/><text x="280" y="129">Helm charts</text>
-          <rect x="350" y="112" width="160" height="26" rx="6" fill="#12171f" stroke="#30363d"/><text x="430" y="129">Argo CD ApplicationSets</text>
-          <rect x="525" y="112" width="115" height="26" rx="6" fill="#12171f" stroke="#30363d"/><text x="582" y="129">Actions templates</text>
+        <rect x="250" y="14" width="220" height="40" rx="10" fill="#d5d3de" stroke="#5d5a92" stroke-width="1.2"/>
+        <text x="360" y="39" fill="#3a3860" font-size="12.5" text-anchor="middle" font-weight="600">Product teams — a PR, not a ticket</text>
+        <line x1="360" y1="54" x2="360" y2="78" stroke="#837a71" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="60" y="80" width="600" height="66" rx="12" fill="#fbfaf8" stroke="#b0603c" stroke-width="1.4"/>
+        <text x="360" y="102" fill="#8d472a" font-size="12.5" text-anchor="middle" font-weight="700">Golden-path building blocks</text>
+        <g font-size="11" fill="#1f1c19" text-anchor="middle">
+          <rect x="80"  y="112" width="130" height="26" rx="7" fill="#edeae5" stroke="#d8d2ca"/><text x="145" y="129">Terraform modules</text>
+          <rect x="225" y="112" width="110" height="26" rx="7" fill="#edeae5" stroke="#d8d2ca"/><text x="280" y="129">Helm charts</text>
+          <rect x="350" y="112" width="160" height="26" rx="7" fill="#edeae5" stroke="#d8d2ca"/><text x="430" y="129">Argo CD ApplicationSets</text>
+          <rect x="525" y="112" width="115" height="26" rx="7" fill="#edeae5" stroke="#d8d2ca"/><text x="582" y="129">Actions workflows</text>
         </g>
-        <line x1="360" y1="146" x2="360" y2="170" stroke="#6e7b8a" stroke-width="1.5" marker-end="url(#a2)"/>
-        <!-- Clusters -->
-        <rect x="120" y="172" width="480" height="44" rx="8" fill="#12171f" stroke="#f0a868"/>
-        <text x="360" y="199" fill="#e6edf3" font-size="12.5" text-anchor="middle">12 EKS clusters · multiple AWS accounts · 50+ apps</text>
-        <!-- Observability -->
-        <line x1="360" y1="216" x2="360" y2="242" stroke="#6e7b8a" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#a2)"/>
-        <rect x="200" y="244" width="320" height="40" rx="8" fill="#12171f" stroke="#4dd0a7"/>
-        <text x="360" y="269" fill="#4dd0a7" font-size="12.5" text-anchor="middle">Prometheus + Grafana · SLO dashboards · 99.95%</text>
+        <line x1="360" y1="146" x2="360" y2="170" stroke="#837a71" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="120" y="172" width="480" height="44" rx="10" fill="#e2dbc9" stroke="#b09a6b" stroke-width="1.2"/>
+        <text x="360" y="199" fill="#5c4f31" font-size="12.5" text-anchor="middle" font-weight="600">12 EKS clusters · multiple AWS accounts · 50+ apps</text>
+        <line x1="360" y1="216" x2="360" y2="242" stroke="#837a71" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#a2)"/>
+        <rect x="180" y="244" width="360" height="40" rx="10" fill="#cddbd6" stroke="#2f6b64" stroke-width="1.2"/>
+        <text x="360" y="269" fill="#1f4f49" font-size="12.5" text-anchor="middle" font-weight="600">Prometheus + Grafana · SLO dashboards · alerts as code</text>
       </svg>
     </div>
     <ul>
       <li><strong>Terraform modules</strong> — parameterized infrastructure primitives teams compose instead of writing from scratch.</li>
       <li><strong>Helm charts</strong> — standardized service packaging with sane, safe defaults.</li>
       <li><strong>Argo CD ApplicationSets</strong> — GitOps delivery that templates deployments across clusters and environments.</li>
-      <li><strong>GitHub Actions templates</strong> — reusable CI so every team's pipeline follows the same guardrails.</li>
+      <li><strong>GitHub Actions workflows</strong> — reusable CI so every team's pipeline follows the same guardrails.</li>
     </ul>
   </div>
 </section>
 
 <section class="prose">
-  <div class="wrap">
-    <h2>Observability I own</h2>
+  <div class="wrap reveal">
+    <h2>Observability standards</h2>
     <p>
-      Availability doesn't come from hope — it comes from seeing problems before users do. I run the Prometheus + Grafana
-      layer as <strong>dashboards-as-code</strong> with SLOs and tuned alerts, holding <strong>99.95% service availability</strong>.
+      Reliability doesn't come from hope — it comes from seeing problems before users do. I built the Prometheus and
+      Grafana layer as <strong>dashboards and alerts as code</strong>, so every new service inherits a real observability
+      baseline instead of depending on whoever remembers to build one.
     </p>
     <ul>
       <li>SLO dashboards make error budgets visible, so teams know when they can ship fast and when to slow down.</li>
-      <li>Alert tuning keeps the signal-to-noise high — pages mean something.</li>
-      <li>Dashboards live in version control, reviewed like any other code.</li>
+      <li>Alert tuning keeps signal-to-noise high — a page should mean something and have an action behind it.</li>
+      <li>Dashboards and alert rules live in version control, reviewed like any other production change.</li>
     </ul>
   </div>
 </section>
 
 <section class="prose">
-  <div class="wrap">
+  <div class="wrap reveal">
+    <h2>Platform networking: ingress-nginx to Gateway API</h2>
+    <p>
+      Ingress ran out of room. Every real feature — rewrites, timeouts, canaries — lived in vendor annotations, and
+      routing config shared one object across platform and application concerns. Migrating to
+      <strong>Kubernetes Gateway API</strong> backed by AWS Load Balancer Controller fixed the ownership split.
+    </p>
+    <ul>
+      <li>The platform team owns <code>Gateway</code> resources — listeners, certificates, and who may bind to them.</li>
+      <li>Application teams own their own <code>HTTPRoute</code> resources, without touching shared traffic config.</li>
+      <li>Standardized how new services connect to the cluster, ahead of the industry-wide shift off Ingress.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="prose">
+  <div class="wrap reveal">
     <h2>AI-assisted operations</h2>
     <p>
-      I work AI-first. Claude Code runs as a daily agent in the infrastructure repos — but on a strict plan → generate →
-      review-every-diff discipline. The judgment stays human; the toil gets automated.
+      I work AI-first, on a strict plan then generate then review-every-diff discipline. Reusable agent workflows built
+      with Claude Code, Codex, and MCP integrations take the toil; the judgment stays human.
     </p>
     <ul>
       <li>Auto-generated runbooks from incident timelines, reviewed and adopted as the team template.</li>
-      <li>Alert summarization and assisted root-cause analysis during incidents.</li>
-      <li>Custom skills and MCP integrations for repetitive infrastructure tasks.</li>
+      <li>Alert summarization and assisted incident triage during live incidents.</li>
+      <li>Custom agent skills and MCP integrations for repetitive Terraform, Kubernetes, and CI/CD work.</li>
     </ul>
     <div class="callout">
       <div class="c-label">RESULT</div>
-      <p>Incident investigation and troubleshooting time down ~30% — without letting an agent make an unreviewed change to IAM, state, or anything destructive.</p>
+      <p>Incident investigation time down ~30% — without letting an agent make an unreviewed change to IAM, state, or anything on a destructive path.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section class="metrics" id="outcomes">
   <div class="wrap">
-    <div class="sec-label">outcomes</div>
-    <h2 class="sec-title">Where it landed</h2>
-    <div class="metrics">
-      <div class="metric"><div class="num">50+</div><div class="lbl">apps on the platform</div></div>
-      <div class="metric"><div class="num">5</div><div class="lbl">EKS clusters</div></div>
-      <div class="metric"><div class="num">99.95%</div><div class="lbl">availability</div></div>
-      <div class="metric"><div class="num">~30%</div><div class="lbl">faster incident triage</div></div>
+    <div class="sec-head reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">Outcomes</div>
+      <h2 class="h2">Where it landed</h2>
+    </div>
+    <div class="metric-grid reveal">
+      <div class="metric"><div class="n">50+</div><div class="l">apps on the platform</div></div>
+      <div class="metric"><div class="n">12</div><div class="l">EKS clusters</div></div>
+      <div class="metric"><div class="n">&minus;40%</div><div class="l">platform support requests</div></div>
+      <div class="metric"><div class="n">&lt;30min</div><div class="l">environment setup</div></div>
+      <div class="metric"><div class="n">&minus;30%</div><div class="l">incident investigation</div></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="f-links">
-      <a href="seatgeek.html">← ticket marketplace deep-dive</a>
-      <a href="index.html">home →</a>
-    </div>
-    <p class="f-note">Dmytro Dmytrush · DevOps / Platform Engineer</p>
+  <div class="wrap foot">
+    <span class="foot-links">
+      <a href="seatgeek.html">← Ticket marketplace deep-dive</a>
+      <a href="index.html">Home →</a>
+    </span>
+    <span class="foot-links">
+      <a href="mailto:contact@dmytro-dmytrush.com">Email</a>
+      <a href="tel:+13129092695">312-909-2695</a>
+      <a href="https://github.com/Drdmytrush90" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/dmytro-dmytrush-b77587130" rel="noopener">LinkedIn</a>
+    </span>
   </div>
 </footer>
+
+<a href="#" class="top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</a>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    items.forEach(function(el){ io.observe(el); });
+  }
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(nav) nav.classList.toggle('stuck', y > 8);
+    if(toTop) toTop.classList.toggle('show', y > 600);
+  }, {passive:true});
+})();
+</script>
 
 </body>
 </html>
